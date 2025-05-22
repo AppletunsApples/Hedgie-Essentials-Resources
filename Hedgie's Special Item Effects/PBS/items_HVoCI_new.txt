@@ -28,7 +28,7 @@ Description = An item to be held by Hoopa in its Confined Form. It is a mysterio
 [NATUREMACHINE]
 Name = Nature Machine
 NamePlural = Nature Machines
-Pocket = 8
+Pocket = 2
 Price = 0
 FieldUse = OnPokemon
 Flags = KeyItem
