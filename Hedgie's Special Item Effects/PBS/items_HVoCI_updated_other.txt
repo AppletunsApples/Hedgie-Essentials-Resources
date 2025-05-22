@@ -1,0 +1,92 @@
+# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[BEACHYGLASS]
+Name = Beach Glass
+NamePlural = Beach Glasses
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = An item to be held by a Pokémon. It is a strange glass that ups the power of Steel and Water-type moves.
+#-------------------------------
+[CHALKYSTONE]
+Name = Chalky Stone
+NamePlural = Chalky Stones
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = An item to be held by a Pokémon. It is a soft stone that ups the power of Rock and Normal-type moves.
+#-------------------------------
+[GOLDTEETH]
+Name = Gold Teeth
+NamePlural = Gold Teeth
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A set of sparkling false golden teeth that boost the holder's biting moves.
+#-------------------------------
+[GOLDLEAF]
+Name = Gold Leaf
+NamePlural = Gold Leaves
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A golden leaf that ups the power of Grass and Normal-type moves.
+#-------------------------------
+[POLISHEDMUDBALL]
+Name = Polished Mud Ball
+NamePlural = Polished Mud Balls
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A ball made of mud that ups the power of Ground and Rock-type moves.
+#-------------------------------
+[SILVERLEAF]
+Name = Silver Leaf
+NamePlural = Silver Leaves
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A silver leaf that ups the power of Grass and Normal-type moves.
+#-------------------------------
+[SMALLBOUQUET]
+Name = Small Bouquet
+NamePlural = Small Bouquets
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A silver leaf that ups the power of Grass and Fairy-type moves.
+#-------------------------------
+[STRETCHYSTRING]
+Name = Stretchy String
+NamePlural = Stretchy Strings
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A bouncy string that ups the power of Steel and Normal-type moves.
+#-------------------------------
+[TROPICALSHELL]
+Name = Tropical Shell
+NamePlural = Tropical Shell
+Pocket = 1
+Price = 4000
+BPPrice = 25
+BattleUse = OnBattler
+Flags = Fling_10
+Description = A beachy shell that ups the power of Water and Rock-type moves.
+#-------------------------------

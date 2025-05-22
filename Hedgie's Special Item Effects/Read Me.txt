@@ -1,0 +1,26 @@
+
+*note that updated Poke Ball effects are found in [003] rather than [001].
+
+# ITEMS
+Any Nature Machine - lucidious89, Hedgehog, 44tim44
+CHOCOLATES - DarkYuan, AutumnMood
+Cherish Ball - Hedgehog
+Discount Coupon - Arcky, Hedgehog
+Geode Ball - AutumnMood, Hedgehog, wrigty12
+Gold Teeth - Hedgehog (Effect & AI only)
+Nature Changer - Hedgehog, 44tim44
+Safari Ball - Hedgehog (Effect only)
+Snow Orb - Hedghehog, Darius
+Sport Ball - Hedgehog
+Stale Candy - Hedgehog, BigFRIV, Darius
+Strange Ball _ hedgehog, wrigty12
+Super Capsule - Hedgehog
+Thumb Drive - Rejuvenation Dev Team
+Vial of Glitter - Asforcia, Hedgehog, Mikayla, BigFRIV
+Weathery Ball - Hedgehog
+
+# LGPE Items - 
+Hedgehog (Effects) & AutumnMood (Sprite Edits)
+
+# OTHER CODE
+Castform-Weather Ball Form Changes - Hedgehog, wrigty12

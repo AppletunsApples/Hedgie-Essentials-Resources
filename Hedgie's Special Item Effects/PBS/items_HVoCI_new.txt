@@ -1,0 +1,139 @@
+# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[GEODEBALL]
+Name = Geode Ball
+NamePlural = Geode Balls
+Pocket = 2
+Price = 50
+BattleUse = OnFoe
+Flags = Fling_30, PokeBall
+Description = A Poké Ball for catching Pokémon that evolve using an Evolution Stone.
+#-------------------------------
+[DISCOUNTCOUPON]
+Name = Discount Coupon
+NamePlural = Discount Coupons
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = This special coupon allows you to buy items at a discount when you are shopping.
+#--------------------------------
+[LOOPHOLE]
+Name = Loop Hole
+NamePlural = Loop Holes
+Pocket = 1
+Price = 1000
+Flags = Fling_90
+Description = An item to be held by Hoopa in its Confined Form. It is a mysterious loop that repeats it's attack for weakened damage.
+#-------------------------------
+[NATUREMACHINE]
+Name = Nature Machine
+NamePlural = Nature Machines
+Pocket = 8
+Price = 0
+FieldUse = OnPokemon
+Flags = KeyItem
+Description = A machine that allows you to change your Pokémon's nature.
+#--------------------------------
+[SNOWORB]
+Name = Snow Orb
+NamePlural = Snow Orbs
+Pocket = 1
+Price = 4000
+BattleUse = OnBattler
+Flags = Fling_30
+Description = An item to be held by a Pokémon. It is a bizarre orb that inflicts frostbite on the holder in battle.
+#--------------------------------
+[STALECANDY]
+Name = Stale Candy
+NamePlural = Stale Candies
+Pocket = 2
+Price = 50
+FieldUse = OnPokemon
+Flags = Fling_30
+Description = A candy that is packed with weird energy. It decreases the level of a single Pokémon by one.
+#-------------------------------
+[ABILITYVIAL]
+Name = Ability Vial
+NamePlural = Ability Vial
+Pocket = 2
+Price = 10000
+FieldUse = OnPokemon
+Description = A special capsule that allows a Pokémon to choose between almost all Abilities when it is used.
+#-------------------------------
+[THUMBDRIVE]
+Name = Thumb Drives
+NamePlural = Thumb Drives
+Pocket = 1
+Price = 1000
+FieldUse = OnPokemon
+Flags = Fling_90
+Description = An item to be held by the Porygon line. It is a hard drive that boosts the Speed stat.
+#-------------------------------
+[VIALOFGLITTER]
+Name = Vial of Glitter
+NamePlural = Vials of Glitter
+Pocket = 1
+FieldUse = OnPokemon
+Price = 15000
+Flags = Fling_30
+Description = If this item is used, the Pokémon is turned shiny.
+#-------------------------------
+#-------------------------------
+#-------------------------------------------------------------------------------
+# Chocolates
+#-------------------------------------------------------------------------------
+#-------------------------------
+[HEALTHCHOCOLATE]
+Name = Health Chocolate
+NamePlural = Health Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base HP of a single Pokémon.
+#-------------------------------
+[STRONGCHOCOLATE]
+Name = Strong Chocolate
+NamePlural = Strong Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base Attack stat of a single Pokémon.
+#-------------------------------
+[ALLURINGCHOCOLATE]
+Name = Alluring Chocolate
+NamePlural = Alluring Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base Defense stat of a single Pokémon.
+#-------------------------------
+[SWEETCHOCOLATE]
+Name = Sweet Chocolate
+NamePlural = Sweet Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base Sp. Atk stat of a single Pokémon.
+#-------------------------------
+[SMARTCHOCOLATE]
+Name = Smart Chocolate
+NamePlural = Smart Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base Sp. Def stat of a single Pokémon.
+#-------------------------------
+[SWIFTCHOCOLATE]
+Name = Swift Chocolate
+NamePlural = Swift Chocolates
+Pocket = 2
+Price = 300
+FieldUse = OnPokemon
+Flags = Fling_20
+Description = An item for use on a Pokémon. It slightly increases the base Speed stat of a single Pokémon.
+#-------------------------------

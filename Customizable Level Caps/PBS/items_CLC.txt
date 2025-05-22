@@ -1,0 +1,21 @@
+#-------------------------------
+[COMMONCANDY]
+Name = Common Candy
+NamePlural = Common Candies
+Pocket = 2
+Price = 5000
+BPPrice = 20
+SellPrice = 10
+FieldUse = OnPokemon
+Flags = Fling_30
+Description = A candy packed with energy that raises the level of a single Pokémon. It cannot go over a level cap.
+#-------------------------------
+[NOTEBOOK]
+Name = Notebook
+NamePlural = Notebooks
+Pocket = 8
+Price = 0
+FieldUse = Direct
+Flags = Fling_40,KeyItem
+Description = A book that allows someone to see their current level cap.
+#-------------------------------
