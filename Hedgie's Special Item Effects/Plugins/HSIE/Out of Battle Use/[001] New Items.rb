@@ -120,3 +120,45 @@ ItemHandlers::UseOnPokemon.add(:VIALOFGLITTER, proc { |item, qty, pkmn, scene|
     next false
   end
 })
+
+# Nature Machine
+ItemHandlers::UseOnPokemon.add(:NATUREMACHINE, proc { |item, qty, pkmn, scene|
+  commands = []
+  ids = []
+
+  GameData::Nature.each do |nature|
+    if nature.stat_changes.empty?
+      commands.push(_INTL("{1} (---)", nature.real_name))
+    else
+      plus_text = ""
+      minus_text = ""
+      nature.stat_changes.each do |change|
+        if change[1] > 0
+          plus_text += "/" unless plus_text.empty?
+          plus_text += GameData::Stat.get(change[0]).name_brief
+        elsif change[1] < 0
+          minus_text += "/" unless minus_text.empty?
+          minus_text += GameData::Stat.get(change[0]).name_brief
+        end
+      end
+      commands.push(_INTL("{1} (+{2}, -{3})", nature.real_name, plus_text, minus_text))
+    end
+    ids.push(nature.id)
+  end
+
+  current_index = ids.index(pkmn.nature_id) || 0
+
+  cmd = scene.pbShowCommands(
+    _INTL("{1}'s nature is currently {2}.", pkmn.name, pkmn.nature.name),
+    commands,
+    current_index
+  )
+
+  if cmd >= 0
+    pkmn.nature = ids[cmd]
+    scene.pbRefresh
+    scene.pbDisplay(_INTL("{1}'s nature changed to {2}!", pkmn.name, pkmn.nature.name))
+  end
+
+  next true
+})

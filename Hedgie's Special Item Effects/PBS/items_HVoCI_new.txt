@@ -31,8 +31,8 @@ NamePlural = Nature Machines
 Pocket = 2
 Price = 0
 FieldUse = OnPokemon
-Flags = KeyItem
-Description = A machine that allows you to change your Pokémon's nature.
+Flags = Fling_20
+Description = A special machine that allows you to change your Pokémon's nature.
 #--------------------------------
 [SNOWORB]
 Name = Snow Orb
