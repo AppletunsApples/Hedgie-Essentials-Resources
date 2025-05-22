@@ -1,0 +1,5 @@
+﻿Name      = Customizable Level Caps
+Version   = 1.0
+Essentials = 21.1
+Website   = https://reliccastle.com/resources/categories/7/
+Credits   = IndianAnimator, Yewchung, Vendily, ClaraDragon, Aiur Jordan, Wrigty12, Nononever, C.Ezra, Golisopod User

@@ -1,0 +1,4 @@
+Name         = Default Player Names
+Version      = 1.0
+Credits      = Apples, TechSkylander1518
+Essentials   = 20, 20.1, 21
