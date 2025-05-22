@@ -1,8 +1,8 @@
 #===============================================================================
 # Mystery Egg Plugin by Hedgie
 # One-time-per-save egg that hatches into a random Pokémon with custom egg moves.
-# Egg hatches after 1 step.
-# Requires a new save; Call with MysteryEgg.give_mystery_egg.
+# Egg hatches after 1 step by default.
+# Requires a new save; Call with MysteryEgg::EggGenerator.give_mystery_egg.
 #===============================================================================
 # Add a new global variable to save the mystery egg species
 class PokemonGlobalMetadata
