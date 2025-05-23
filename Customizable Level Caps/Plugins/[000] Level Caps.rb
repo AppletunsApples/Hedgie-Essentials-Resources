@@ -55,9 +55,9 @@ def pbGainExpOne(idxParty, defeatedBattler, numPartic, expShare, expAll, showMes
         thispoke = pkmn
     end
     if $game_switches[62] == true
-          levelCap=LEVEL_CAPS[$game_variables[27]]
+          levelCap=LEVEL_CAPS[$game_variables[27]] # Soft Caps Variable
           exp = 50 if pkmn.level>=levelCap || $player.has_exp_all == true && pkmn.level>=levelCap
-    elsif $game_switches[61] == true
+    elsif $game_switches[61] == true # Hard Caps Variable
           levelCap=LEVEL_CAPS[$game_variables[27]]
           exp = 0 if pkmn.level>=levelCap || $player.has_exp_all == true && pkmn.level>=levelCap
       exp = (exp*1)

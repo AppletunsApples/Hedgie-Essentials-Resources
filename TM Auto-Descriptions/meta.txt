@@ -1,0 +1,4 @@
+Name         = TM Auto-Descriptions
+Version      = 1.0
+Website      = None
+Credits      = FL

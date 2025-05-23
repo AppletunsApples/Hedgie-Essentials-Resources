@@ -85,7 +85,7 @@ end
 
 # Adding the Move Relearner option to the Party Menu
 MenuHandlers.add(:party_menu, :relearner, {
-  "name"      => _INTL("Relearn"),
+  "name"      => _INTL("Relearn Moves"),
   "icon_name" => "moves",
   "order"     => 60,
   "condition" => proc { |screen, party, party_idx| 

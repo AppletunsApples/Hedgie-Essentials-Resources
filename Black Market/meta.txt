@@ -1,0 +1,4 @@
+Name         = Black Market
+Version      = 2.0
+Essentials   = 21.1
+Credits      = ~JV~, DrDoom76, ThatOneGameBoy, Hedgie
