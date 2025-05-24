@@ -12,7 +12,7 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 > Unlike [NonoNever's version (Level Caps EX)](https://eeveeexpo.com/resources/1481/), it lets you use **both soft and hard level caps** in the same game. This means both can be implemented ingame for whatever you may desire to be used for. The code also includes a **Rare Candy-like item** that stops Pokémon from going over the level cap when used. The original Rare Candy still works the same, so you can include both versions if you want.
 
 - Default Player Names
-> A default name given to the player instead of their base name if they do no enter any name in normally.
+> A default name given to the player instead of their base name if they do not enter any name in normally.
 
 - Hedgie's Special Item Effects
 
