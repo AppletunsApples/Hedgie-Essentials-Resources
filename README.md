@@ -5,7 +5,7 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 
 ## Plugins
 - Black Market
-> A revision of the original [Black Market plugin](https://eeveeexpo.com/threads/2877/) by JT; allows the player to sell Pokemon ala a traditional PC with the script command pbBlackmarket. Format is either pbBlackMarket[STOCKLISTNAME] with STOCKLISTNAME replaced with the list in the index at the top OR pbBlackMarket([[:SPECIES,COST,LEVEL]]).
+> A revision of the original [Black Market plugin](https://eeveeexpo.com/threads/2877/) by JT; allows the player to sell Pokemon ala a traditional Mart with the script command pbBlackmarket. Format is either pbBlackMarket[STOCKLISTNAME] with STOCKLISTNAME replaced with the list in the index at the top OR pbBlackMarket([[:SPECIES,COST,LEVEL]]).
 
 - Customizable Level Caps
 > **This is an updated version of Golisopod’s Level Caps plugin.**
