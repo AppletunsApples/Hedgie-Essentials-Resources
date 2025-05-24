@@ -1,0 +1,4 @@
+Name         = Thieving into Bag
+Version      = 1.1
+Credits      = Apples
+Essentials   = 21.1

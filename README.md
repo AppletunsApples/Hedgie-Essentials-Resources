@@ -1,9 +1,12 @@
 # INFO
-A full list of plugins I've either had help making or made myself!
+A full list of plugins I've either had help making or made myself (with the exception of Always Headbutt & TM Auto-Descriptions)!
 
 Of the plugins that can be found here, the Mystery Egg & Story Level System plugins **require new saves** in order to take effect! Anything else when implemented will retroactively work just fine!
 
 ## Plugins
+- Always Headbutt
+> Headbutt usage in the overworld will now always guarantee an encounter.
+
 - Black Market
 > A revision of the original [Black Market plugin](https://eeveeexpo.com/threads/2877/) by JT; allows the player to sell Pokemon ala a traditional Mart with the script command pbBlackmarket. Format is either pbBlackMarket[STOCKLISTNAME] with STOCKLISTNAME replaced with the list in the index at the top OR pbBlackMarket([[:SPECIES,COST,LEVEL]]).
 
@@ -15,6 +18,9 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 > A default name given to the player instead of their base name if they do not enter any name in normally.
 
 - Hedgie's Special Item Effects
+
+- Pokedex Icons over Footprints
+> Replaces Pokémon footprints in the Pokédex with their corresponding Pokémon icons.
 
 - Mystery Egg
 > **Requires a new save to properly work.**
@@ -29,6 +35,9 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 
 - SV Forfeiting
 > An update to battling that allows the player to forfeit in battle without the need of debug.
+
+- Thieve into Bag
+> Stolen items go directly into the Bag instead of being held by the attacking Pokémon when using Covet or Thief.
 
 - TM Auto-Descriptions
 > TM move descriptions are automatically generated if the "Description" field in the item's PBS file is left blank (Description =).
