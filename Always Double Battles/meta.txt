@@ -1,0 +1,4 @@
+Name       = Always Double Battles
+Version    = 1.0.0
+Essentials = 21.1
+Credits    = Hedgie
