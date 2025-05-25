@@ -1,3 +1,9 @@
+#-----------------------------------------------------------------------------
+# Black Market updated by Hedgie
+# A revision of the original Black Market plugin by JT.
+# It allows the player to sell Pokemon ala a traditional Mart with the script command pbBlackmarket. 
+# Format is either pbBlackMarket[STOCKLISTNAME] with STOCKLISTNAME replaced with the list in the index at the top OR pbBlackMarket([[:SPECIES,COST,LEVEL]]).
+#-----------------------------------------------------------------------------
 # Predefined stock lists
 Pseudo = [
   [:DRATINI, 20000, 10],

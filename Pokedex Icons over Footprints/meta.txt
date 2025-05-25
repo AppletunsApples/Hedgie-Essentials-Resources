@@ -1,0 +1,5 @@
+Name       = Pokedex Icons or Footprints
+Version    = 1.0.4
+Essentials = 21
+Website    = https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Credits    = Golisopod User, Luka S.J., Hedgie

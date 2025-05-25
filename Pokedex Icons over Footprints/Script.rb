@@ -1,3 +1,10 @@
+#===============================================================================
+# Icons over Footprints in Pokedex
+# Replaces Pokémon footprints in the Pokédex with their corresponding Pokémon icons.
+#===============================================================================
+#-------------------------------------------------------------------------------
+# Replaces the footprint over the icon on the basic Pokedex page.
+#-------------------------------------------------------------------------------
 class PokemonPokedexInfo_Scene
   def drawPageInfo
     @sprites["background"].setBitmap(_INTL("Graphics/UI/Pokedex/bg_info"))

@@ -1,7 +1,6 @@
 #===============================================================================
 # Always Double Battles by Hedgie
-# Forces all wild and trainer battles to be double battles.
-# Prevents depositing if player has less than 3 Pokémon.
+# Will always force double battles where possible & prevents box usage if the player has 2 or less Pokemon.
 #===============================================================================
 #-------------------------------------------------------------------------------
 # Force double battles where possible

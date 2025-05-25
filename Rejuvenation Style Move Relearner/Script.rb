@@ -1,8 +1,15 @@
-module Settings
+#===============================================================================
+# Rejuvenation Style Move Relearner by Hedgie
+# A system that lets a Pokémon relearn moves from the party menu after a Heart Scale is used on it through the Move Relearner NPC.
+#===============================================================================
+#-------------------------------------------------------------------------------
+# CONFIGURATION
+ module Settings
   EGGMOVESSWITCH = 99  # Set this switch to toggle the ability to relearn Egg Moves
 end
 
 RELEARNABLEEGGMOVES = false  # Set to true to allow relearning Egg Moves.
+#-------------------------------------------------------------------------------
 
 # This class ensures each Pokémon has an unlocked_relearner flag
 class Pokemon

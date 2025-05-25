@@ -1,3 +1,7 @@
+#===============================================================================
+# SV Forfeiting
+# An update to battling that allows the player to forfeit in battle without the need of debug.
+#===============================================================================
 class Battle
   
   alias __original_pbRun pbRun

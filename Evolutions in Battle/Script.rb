@@ -1,3 +1,10 @@
+#===============================================================================
+# Evolutions in Battle
+# Allows level-based or related evolutions to be done in battle.
+#===============================================================================
+#-----------------------------------------------------------------------------
+# Makes it so a Pokémon will try to evolve immediately after gaining experience from a battle (if eligible).
+#-----------------------------------------------------------------------------
 class Battle
   alias_method :pbGainExpOne_original, :pbGainExpOne
 
@@ -23,7 +30,6 @@ class Battle
     end
 
     if battler
-      # Update battler’s move data and item, if changed
       pkmn.moves.each_with_index do |m, i|
         battler.moves[i] = Battle::Move.from_pokemon_move(self, m)
       end

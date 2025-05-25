@@ -1,13 +1,16 @@
 
 #===============================================================================
-# Overrides stat calculation to use a variable for levels. This means levels effectively are only used for evolutions & level-up moves.
+# Story-based Levels by Hedgie with help from ChatGPT
+# The level used in battle is linked to a variable that determines the level at which the Pokémon's stats are calculated.
+# This means levels effectively are only used for evolutions & level-up moves.
 # A new save is needed to get this working.
-# Made with help from ChatGPT
 #===============================================================================
+#-------------------------------------------------------------------------------
+# CONFIGURATION
 module Story_LevelStats
   STORY_VAR_ID = 75  # Game variable ID for story progress
   STORY_LEVELS = [5, 10, 15, 20, 25, 30]  # Predefined levels based on story progress
-
+#-------------------------------------------------------------------------------
   # Get the current story level based on the variable
   def self.get_story_level
     index = $game_variables[STORY_VAR_ID] || 0  # Default to 0 if invalid

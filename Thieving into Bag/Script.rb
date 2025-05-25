@@ -1,4 +1,10 @@
-# Covet, Thief
+#===============================================================================
+# Thieving into Bag
+# Stolen items go directly into the Bag instead of being held by the attacking Pokémon when using Covet or Thief.
+#===============================================================================
+#-----------------------------------------------------------------------------
+# Move effect changes
+#-----------------------------------------------------------------------------
 class Battle::Move::UserTakesTargetItem < Battle::Move
   def pbEffectAfterAllHits(user, target)
     return if user.wild?   # Wild Pokémon can't thieve

@@ -7,6 +7,9 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 - Always Headbutt
 > Headbutt usage in the overworld will now always guarantee an encounter.
 
+- Always Double Battles
+> Will always force double battles where possible & prevents box usage if the player has 2 or less Pokemon.
+
 - Black Market
 > A revision of the original [Black Market plugin](https://eeveeexpo.com/threads/2877/) by JT; allows the player to sell Pokemon ala a traditional Mart with the script command pbBlackmarket. Format is either pbBlackMarket[STOCKLISTNAME] with STOCKLISTNAME replaced with the list in the index at the top OR pbBlackMarket([[:SPECIES,COST,LEVEL]]).
 
@@ -16,6 +19,9 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 
 - Default Player Names
 > A default name given to the player instead of their base name if they do not enter any name in normally.
+
+- Evolutions in Battle
+> Allows level-based or related evolutions to be done in battle.
 
 - Hedgie's Special Item Effects
 

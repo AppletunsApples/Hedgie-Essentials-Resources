@@ -1,9 +1,17 @@
-#==============================================================================#
-#\\\\\\\\\\\\\\\\\\\\\\\\\\CONFIGURATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-#==============================================================================#
+#===============================================================================
+# Customizable Level Caps updated by Hedgie
+# Unlike NonoNever's version (Level Caps EX), it lets you use both soft and hard level caps in the same game. 
+# This means both can be implemented ingame for whatever you may desire to be used for. 
+# The code also includes a Rare Candy-like item that stops Pokémon from going over the level cap when used. 
+# The original Rare Candy still works the same, so you can include both versions if you want.
+#===============================================================================
+#-------------------------------------------------------------------------------
+# CONFIGURATION
 LEVEL_CAPS = [15,20,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100]
-#==============================================================================#
-
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+# Edits EXP Gaining to be affected by level caps.
+#-------------------------------------------------------------------------------
 class Battle
 def pbGainExpOne(idxParty, defeatedBattler, numPartic, expShare, expAll, showMessages = true)
     pkmn = pbParty(0)[idxParty]   # The Pokémon gaining Exp from defeatedBattler
@@ -153,6 +161,9 @@ def pbGainExpOne(idxParty, defeatedBattler, numPartic, expShare, expAll, showMes
   end
 end
 
+#-------------------------------------------------------------------------------
+# NO IDEA WHY but fixes a bug otherwise caushing crashes with TM learning.
+#-------------------------------------------------------------------------------
 def pbLearnMove(pkmn, move, ignore_if_known = false, by_machine = false, screen = nil, &block)
   return false if !pkmn
   pkmn_name = pkmn.name
@@ -206,7 +217,9 @@ def pbLearnMove(pkmn, move, ignore_if_known = false, by_machine = false, screen 
   return false
 end
 
-# Exp Candy
+#-------------------------------------------------------------------------------
+# Edits EXP Candy to be affected by level caps.
+#-------------------------------------------------------------------------------
 def pbGainExpFromExpCandy(pkmn, base_amt, qty, scene, item)
   if pkmn.level >= LEVEL_CAPS[$game_variables[27]] || pkmn.shadowPokemon?
     scene.pbDisplay(_INTL("It won't have any effect."))
