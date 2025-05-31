@@ -28,6 +28,11 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 - Pokedex Icons over Footprints
 > Replaces Pokémon footprints in the Pokédex with their corresponding Pokémon icons.
 
+- New Game+
+> A Pokemon-based New Game+ plugin that carries over Pokémon (base form at level 5) and money while removing items. Shininess, ability, nature kept, and max IVs set
+> Adds "New Game+" to the load screen.
+> To use, call at a specific spot with NewGamePlus.prepare_ngplus_data($player).
+
 - Mystery Egg
 > **Requires a new save to properly work.**
 > Simplifies the scripting and management of mystery eggs where one of several possible Pokémon species is chosen at random once, and then always hatches into that same pre-determined species for that playthrough. This mirrors the system seen in games like Pokémon Reborn or Pokémon Rejuvenation, where the egg is not truly random each time you reset, making it consistent per save.
