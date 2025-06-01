@@ -1,4 +1,4 @@
 Name       = New Game+
 Version    = 1.0.0
 Essentials = 21.1
-Credits    = Hedgie, Nononever
+Credits    = Hedgie, Nononever, Vendily

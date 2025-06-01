@@ -1,9 +1,6 @@
-module NewGamePlus
-  SETTINGS = {
-    START_LEVEL: 5,
-    IV_OVERRIDE: nil,
-    FORCE_SHINY: false,
-    RESET_PARTY_TO_BABY: true,
-    CLONE_ORIGINAL_IF_NOT_BABY: true,
-  }
+module NewGamePlusSettings
+  START_LEVEL = 6
+  IV_OVERRIDE = [31, 31, 31, 31, 31, 31] # HP, Atk, Def, SpE, SpA, SpD
+  FORCE_SHINY = true
+  RESET_PARTY_FIRST_STAGE = true # Reset each party member to their first stage
 end

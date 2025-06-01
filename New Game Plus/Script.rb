@@ -1,9 +1,9 @@
 #===============================================================================
 # New Game+ by Hedgie
 # Carries over Pokémon (base form at level 5) and money while removing items
-# Shininess, ability, nature kept, and max IVs set
+# Shininess, ability, nature kept, and max IVs set by default
 # Adds "New Game+" to the load screen
-# Call at a specific spot with NewGamePlus.prepare_ngplus_data($player).
+# Call at a specific spot with NewGamePlus.save_ngplus_data($player).
 #===============================================================================
 # Core New Game+ Logic
 #===============================================================================
@@ -50,50 +50,41 @@ module NewGamePlus
     return unless ngplus_data_exists?
 
     ng_data = load_data(DATA_FILE)
-
-    $game_variables = Game_Variables.new unless $game_variables
-    $PokemonTemp = PokemonTemp.new unless $PokemonTemp.is_a?(PokemonTemp)
-    $PokemonTemp.ngplus_data = {
-      name: ng_data[:name].is_a?(String) ? ng_data[:name] : "Player",
-      trainer_type: ng_data[:trainer_type],
-      money: ng_data[:money] || 3000
-    }
-
+    $game_temp.ngplus_data = ng_data
     pbFadeOutIn do
       Game.start_new
-      $PokemonStorage = PokemonStorage.new unless $PokemonStorage
+      $PokemonStorage = PokemonStorage.new
 
       ng_data[:party].each do |pkmn_data|
         next unless pkmn_data[:species]
+        species = GameData::Species.try_get(pkmn_data[:species])
 
-        new_pkmn = Pokemon.new(pkmn_data[:species], 5)
-        new_pkmn.shiny = true if pkmn_data[:shiny]
+        # Determine species
+        species_id = species.id
+        species_id = species.get_baby_species if NewGamePlusSettings::RESET_PARTY_FIRST_STAGE
+        
+        new_pkmn = Pokemon.new(species_id, NewGamePlusSettings::START_LEVEL)
+
+        new_pkmn.shiny = NewGamePlusSettings::FORCE_SHINY || pkmn_data[:shiny]
+        new_pkmn.nature = pkmn_data[:nature_id] if pkmn_data[:nature_id]
+        new_pkmn.form = pkmn_data[:form] if pkmn_data[:form]
 
         if pkmn_data[:ability_id]
-          abil_index = new_pkmn.getAbilityList.find_index { |a| a[0] == pkmn_data[:ability_id] }
-          new_pkmn.ability_index = abil_index if abil_index
+          new_pkmn.ability = pkmn_data[:ability_id]
         end
 
-        if pkmn_data[:nature_id]
-          begin
-            new_pkmn.nature = GameData::Nature.get(pkmn_data[:nature_id]).id
-          rescue
-            # Invalid nature_id; skip setting it
-          end
-        end
+        iv_value = NewGamePlusSettings::IV_OVERRIDE
+        GameData::Stat.each_main { |s| new_pkmn.iv[s.id] = iv_value[s.pbs_order].nil? ? 31 : iv_value[s.pbs_order] }
 
-        if pkmn_data[:form]
-          begin
-            new_pkmn.form_simple = pkmn_data[:form]
-          rescue
-            # Invalid form; skip
-          end
-        end
+        new_pkmn.calc_stats
+        echoln new_pkmn if $DEBUG
+        $player.party << new_pkmn
 
+        $player.party.clear
         $PokemonStorage.pbStoreCaught(new_pkmn)
-      end
     end
   end
+end
 
   def self.clear_ngplus_data
     File.delete(DATA_FILE) if File.exist?(DATA_FILE)
@@ -131,6 +122,19 @@ module NewGamePlus
     }
     save_data(data, DATA_FILE)
   end
+end
+
+# Modify Game_Temp to support NG+ data
+class Game_Temp
+  attr_accessor :ngplus_data
+end
+
+#===============================================================================
+# Global helper for event scripts to save NG+ data
+#===============================================================================
+def prepare_ngplus_data(player = $player)
+  return unless player&.party&.any?
+  NewGamePlus.save_ngplus_data(player)
 end
 
 #===============================================================================
@@ -226,100 +230,10 @@ class PokemonLoadScreen
   end
 end
 
-# Modify PokemonTemp to support NG+ data
-class PokemonTemp
-  attr_accessor :ngplus_data
-end
-
-#===============================================================================
-# Modify Game module to apply NG+ data on new game start
-#===============================================================================
-module Game
-  class << self
-    alias original_start_new start_new
-
-    def start_new
-      original_start_new
-
-      if $PokemonTemp&.ngplus_data && $Trainer
-        ng_data = $PokemonTemp.ngplus_data
-        settings = NewGamePlus::SETTINGS
-
-        $Trainer.name = ng_data[:name] if ng_data[:name]
-        if ng_data[:trainer_type] && GameData::TrainerType.exists?(ng_data[:trainer_type])
-          $Trainer.trainer_type = ng_data[:trainer_type]
-        end
-        $Trainer.money = ng_data[:money] if ng_data[:money]
-
-        if ng_data[:party]
-          $Trainer.party.clear
-          ng_data[:party].each do |pkmn_data|
-            species = GameData::Species.try_get(pkmn_data[:species])
-            unless species
-              echoln "Species not found for NG+ Pokémon: #{pkmn_data[:species].inspect}" if $DEBUG
-              next
-            end
-
-            # Determine species for party member
-            species_id = if settings[:RESET_PARTY_TO_BABY]
-              baby_species = species.get_baby_species
-              if baby_species && GameData::Species.exists?(baby_species)
-                baby_species
-              elsif settings[:CLONE_ORIGINAL_IF_NOT_BABY]
-                species.id
-              else
-                next
-              end
-            else
-              species.id
-            end
-
-            new_pkmn = Pokemon.new(species_id, settings[:START_LEVEL])
-
-            # Set shiny status
-            new_pkmn.shiny = settings[:FORCE_SHINY] || pkmn_data[:shiny] || false
-
-            # Set nature
-            new_pkmn.nature = pkmn_data[:nature_id] if pkmn_data[:nature_id]
-
-            # Set form
-            new_pkmn.form = pkmn_data[:form] if pkmn_data[:form]
-
-            # Set ability (prefer ability_id index)
-            if pkmn_data[:ability_id]
-              new_pkmn.ability_index = pkmn_data[:ability_id]
-            elsif pkmn_data[:ability]
-              new_pkmn.ability = pkmn_data[:ability]
-            end
-
-            # Override IVs or default to max IVs
-            iv_value = settings[:IV_OVERRIDE]
-            GameData::Stat.each_main { |s| new_pkmn.iv[s.id] = iv_value.nil? ? 31 : iv_value }
-
-            new_pkmn.calc_stats
-            $Trainer.party << new_pkmn
-          end
-        end
-
-        $PokemonTemp.ngplus_data = nil
-      end
-    end
-  end
-end
-
-#===============================================================================
-# Global helper for event scripts to save NG+ data
-#===============================================================================
-def prepare_ngplus_data(player = $player)
-  return unless player&.party&.any?
-  NewGamePlus.save_ngplus_data(player)
-end
-
 #===============================================================================
 # Debug Menu additions scripts to save NG+ data
 #===============================================================================
 # Add NG+ commands to the debug menu
-
 MenuHandlers.add(:debug_menu, :save_ngplus, {
   "name"        => _INTL("Save NG+ Data"),
   "parent"      => :field_menu,
