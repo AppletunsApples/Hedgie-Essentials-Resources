@@ -28,4 +28,5 @@ def pbRun(idxBattler, duringBattle = false)
   end
 
   __original_pbRun(idxBattler, duringBattle)
+  end
 end
