@@ -1,15 +1,8 @@
-#===============================================================================
-# Rejuvenation Style Move Relearner by Hedgie
-# A system that lets a Pokémon relearn moves from the party menu after a Heart Scale is used on it through the Move Relearner NPC.
-#===============================================================================
-#-------------------------------------------------------------------------------
-# CONFIGURATION
- module Settings
+module Settings
   EGGMOVESSWITCH = 99  # Set this switch to toggle the ability to relearn Egg Moves
 end
 
 RELEARNABLEEGGMOVES = false  # Set to true to allow relearning Egg Moves.
-#-------------------------------------------------------------------------------
 
 # This class ensures each Pokémon has an unlocked_relearner flag
 class Pokemon
@@ -39,15 +32,15 @@ def get_relearnable_moves(pkmn)
     moves.push(move_id) unless moves.include?(move_id)
   end
   
-  # Add Egg Moves
-  GameData::Species.get(pkmn.species).get_egg_moves.each do |move_id|
-    moves.push(move_id) unless pkmn.hasMove?(move_id) || moves.include?(move_id)
+  # Add First Moves
+  pkmn.first_moves.each do |move_id|
+      moves.unshift(move_id) unless pkmn.hasMove?(move_id) || moves.include?(move_id)
   end
   
-  # Add First Moves, if enabled via Settings or a switch
-  if ($game_switches[Settings::EGGMOVESSWITCH] || RELEARNABLEEGGMOVES) && pkmn.first_moves
-    pkmn.first_moves.each do |move_id|
-      moves.unshift(move_id) unless pkmn.hasMove?(move_id) || moves.include?(move_id)
+  # Add Egg Moves
+  if ($game_switches[Settings::EGGMOVESSWITCH] rescue false) || (defined?(RELEARNABLEEGGMOVES) && RELEARNABLEEGGMOVES)
+    GameData::Species.get(pkmn.species).get_egg_moves.each do |move_id|
+      moves.push(move_id) unless pkmn.hasMove?(move_id) || moves.include?(move_id)
     end
   end
   
@@ -92,7 +85,7 @@ end
 
 # Adding the Move Relearner option to the Party Menu
 MenuHandlers.add(:party_menu, :relearner, {
-  "name"      => _INTL("Relearn Moves"),
+  "name"      => _INTL("Relearn"),
   "icon_name" => "moves",
   "order"     => 60,
   "condition" => proc { |screen, party, party_idx| 

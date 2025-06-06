@@ -1,4 +1,4 @@
 Name         = Rejuvenation-style Move Relearner
 Version      = 1.0
 Essentials   = 21.1
-Credits      = Hedgie, Golisopod User
+Credits      = Hedgie
