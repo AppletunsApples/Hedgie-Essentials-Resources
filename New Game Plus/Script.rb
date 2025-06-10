@@ -151,14 +151,14 @@ module Game
       if $PokemonTemp&.ngplus_data && $Trainer
         ng_data = $PokemonTemp.ngplus_data
 
-        $Trainer.name = ng_data[:name] if ng_data[:name]
+        $player.name = ng_data[:name] if ng_data[:name]
         if ng_data[:trainer_type] && GameData::TrainerType.exists?(ng_data[:trainer_type])
-          $Trainer.trainer_type = ng_data[:trainer_type]
+          $player.trainer_type = ng_data[:trainer_type]
         end
-        $Trainer.money = ng_data[:money] if ng_data[:money]
+        $player.money = ng_data[:money] if ng_data[:money]
 
         if ng_data[:party]
-          $Trainer.party.clear
+          $player.party.clear
           ng_data[:party].each do |pkmn_data|
             species = GameData::Species.try_get(pkmn_data[:species])
             unless species
@@ -193,7 +193,7 @@ module Game
             GameData::Stat.each_main { |s| new_pkmn.iv[s.id] = iv_value.nil? ? 31 : iv_value }
 
             new_pkmn.calc_stats
-            $Trainer.party << new_pkmn
+            $player.party << new_pkmn
           end
         end
 
