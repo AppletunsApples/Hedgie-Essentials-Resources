@@ -2,49 +2,24 @@
 # Always Double Battles by Hedgie
 # Will always force double battles where possible & prevents box usage if the player has 2 or less Pokemon.
 #===============================================================================
-#-------------------------------------------------------------------------------
-# Force double battles where possible
-#-------------------------------------------------------------------------------
-def pbStartBattle
-  player_usable = pbParty(0).count { |p| p && !p.egg? && p.hp > 0 }
-  opponent_usable = pbParty(1).count { |p| p && !p.egg? && p.hp > 0 }
+class PokemonEncounters
+  def have_double_wild_battle?
+    return false if $game_temp.force_single_battle
+    return false if pbInSafari?
+    return true if $PokemonGlobal.partner
+    return false if $player.able_pokemon_count <= 1
+    return true
+  end
+end
 
-  if player_usable >= 2 && opponent_usable >= 2
-    @sideSizes = [2, 2]
+EventHandlers.add(:on_enter_map, :toggle_battle_mode_by_party, proc { |old_map_id|
+  if $player.able_pokemon_count <= 1
+    setBattleRule("1v1")
   else
-    @sideSizes = [1, 1]
+    setBattleRule("2v2")
   end
-      
-    PBDebug.log("")
-    PBDebug.log("================================================================")
-    PBDebug.log("")
-    logMsg = "[Started battle] "
-    if @sideSizes[0] == 1 && @sideSizes[1] == 1
-      logMsg += "Single "
-    elsif @sideSizes[0] == 2 && @sideSizes[1] == 2
-      logMsg += "Double "
-    elsif @sideSizes[0] == 3 && @sideSizes[1] == 3
-      logMsg += "Triple "
-    else
-      logMsg += "#{@sideSizes[0]}v#{@sideSizes[1]} "
-    end
-    logMsg += "wild " if wildBattle?
-    logMsg += "trainer " if trainerBattle?
-    logMsg += "battle (#{@player.length} trainer(s) vs. "
-    logMsg += "#{pbParty(1).length} wild Pokémon)" if wildBattle?
-    logMsg += "#{@opponent.length} trainer(s))" if trainerBattle?
-    PBDebug.log(logMsg)
-    pbEnsureParticipants
-    pbParty(0).each { |pkmn| @peer.pbOnStartingBattle(self, pkmn, wildBattle?) if pkmn }
-    pbParty(1).each { |pkmn| @peer.pbOnStartingBattle(self, pkmn, wildBattle?) if pkmn }
-    begin
-      pbStartBattleCore
-    rescue BattleAbortedException
-      @decision = 0
-      @scene.pbEndBattle(@decision)
-    end
-    return @decision
-  end
+})
+
 
 #===============================================================================
 # Changes to prevent the player from having less than 2 Pokémon once they do.
