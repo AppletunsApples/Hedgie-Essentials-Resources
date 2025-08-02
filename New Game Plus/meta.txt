@@ -1,4 +1,0 @@
-Name       = New Game Plus
-Version    = 1.0.0
-Essentials = 21.1
-Credits    = Hedgie, Nononever, Vendily
