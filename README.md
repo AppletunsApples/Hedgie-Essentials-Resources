@@ -31,7 +31,7 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 - New Game+
 > A Pokemon-based New Game+ plugin that carries over Pokémon (base form at level 5) and money while removing items. Shininess, ability, nature kept, and max IVs set
 > Adds "New Game+" to the load screen.
-> To use, call at a specific spot with NewGamePlus.prepare_ngplus_data($player).
+> To use, call at a specific spot with NewGamePlus.prepare.
 
 - Mystery Egg
 > **Requires a new save to properly work.**
