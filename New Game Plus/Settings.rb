@@ -5,8 +5,7 @@ module NewGamePlus
   SAVE_DATA_ON_GAME_SAVE = 100
 
   # Set this to the Game Switch that should be set to ON for New Game+ data
-  # to affect certain events. Set this to zero if New Game+ data should not
-  # affect the game besides the party.
+  # to affect certain events.
   NEW_GAME_PLUS_SWITCH = 101
 
   # Set this to the amount of money the player starts with upon starting New Game+.
