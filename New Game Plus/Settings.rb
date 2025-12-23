@@ -4,13 +4,18 @@ module NewGamePlus
   # New Game+ data should never save unless explicitly called.
   SAVE_DATA_ON_GAME_SAVE = 100
 
+  # Set this to the Game Switch that should be set to ON for New Game+ data
+  # to affect certain events. Set this to zero if New Game+ data should not
+  # affect the game besides the party.
+  NEW_GAME_PLUS_SWITCH = 101
+
   # Set this to the amount of money the player starts with upon starting New Game+.
   # If the player had more money than this amount, their money will be unchanged.
   START_MONEY            = 10_000
 
   # Set this to true if you want the Player's storage Pokemon to also be carried over
   # upon starting New Game+
-  CARRY_OVER_STORAGE     = true
+  CARRY_OVER_STORAGE     = false
 
   # Set this to true if you want the Player's party Pokemon to be stored in the PC
   # upon starting New Game+. If false, the party Pokemon will be placed in the playe's
@@ -37,12 +42,12 @@ module NewGamePlus
   # Example:
   # OVERRIDE_IVS = 15
   # OVERRIDE_IVS = {:HP => 20, :DEFENSE => 15, :SPECIAL_ATTACK => 10, :SPEED => 5}
-  OVERRIDE_IVS           = 15
+  OVERRIDE_IVS           = 31
 
   # Set this to the multiplier for the chance of Pokemon being shiny upon starting
   # a New Game+. For example, a value of 100 means a 1 in 100 chance of being shiny.
   # Set this to 0 to leave shiny chances unchanged, and true to make all Pokemon shiny.
-  OVERRIDE_SHININESS     = 100
+  OVERRIDE_SHININESS     = 0
 
   # Set this to true to reset each Pokemon to their first stage upon starting New Game+
   OVERRIDE_EVOLUTION     = true

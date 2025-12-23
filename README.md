@@ -40,6 +40,9 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 - Rejuvenation Style Move Relearner
 > A system that lets a Pokémon relearn moves from the party menu after a Heart Scale is used on it through the Move Relearner NPC.
 
+- Semi-Shift Mode
+> A new battle style based on Clover & Radical Red that allows the player to switch Pokémon without seeing the opponent's next foe.
+
 - Story-based Levels
 > **Requires a new save to properly work.**
 > The level used in battle is linked to a variable that determines the level at which the Pokémon's stats are calculated.

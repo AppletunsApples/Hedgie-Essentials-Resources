@@ -88,6 +88,8 @@ module NewGamePlus
       end
       $game_temp.ngplus_data = data
       Game.start_new
+      switch_id = NewGamePlus::NEW_GAME_PLUS_SWITCH
+      $game_switches[switch_id] = true
     end
   end
 
