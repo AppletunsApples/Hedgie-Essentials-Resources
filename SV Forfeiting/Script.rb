@@ -21,7 +21,7 @@ def pbRun(idxBattler, duringBattle = false)
     if pbDisplayConfirm(_INTL("Would you like to forfeit the match and quit now?"))
       pbSEPlay("Battle flee")
       pbDisplay(_INTL("{1} forfeited the match!", self.pbPlayer.name))
-      @decision = 3
+      @decision = 2
       return 1
     end
     return 0
