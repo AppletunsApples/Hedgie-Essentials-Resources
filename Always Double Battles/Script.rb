@@ -2,16 +2,25 @@
 # Always Double Battles by Hedgie
 # Will always force double battles where possible & prevents box usage if the player has 2 or less Pokemon.
 #===============================================================================
-EventHandlers.add(:on_start_battle, :doubles_by_default,
-  proc {
+EventHandlers.add(:on_trainer_load, :doubles_by_default,
+   proc { |trainer|
     if pbCanDoubleBattle?
       setBattleRule("double")
     else
       setBattleRule("single")
     end
-    echoln "Battle rules: #{$game_temp.battle_rules.inspect}"
   }
 )
+
+class PokemonEncounters
+  def have_double_wild_battle?
+    return false if $game_temp.force_single_battle
+    return false if pbInSafari?
+    return true if $PokemonGlobal.partner
+    return true if $player.able_pokemon_count >= 2
+    return true
+  end
+end
 
 #===============================================================================
 # Changes to prevent the player from having less than 2 Pokémon once they do.

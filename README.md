@@ -1,5 +1,5 @@
 # INFO
-A full list of plugins I've either had help making or made myself (with the exception of Always Headbutt & TM Auto-Descriptions)!
+A full list of plugins I've either had help making or made myself (with the exception of Always Headbutt, Doubles Captures & TM Auto-Descriptions)!
 
 Of the plugins that can be found here, the Mystery Egg & Story Level System plugins **require new saves** in order to take effect! Anything else when implemented will retroactively work just fine!
 
@@ -19,6 +19,12 @@ Of the plugins that can be found here, the Mystery Egg & Story Level System plug
 
 - Default Player Names
 > A predefined name given to the player character instead of the player's compurer name if they do not enter any name in normally.
+
+- Doubles by Default
+> Updates trainers & wild Pokemon to be singles by default. Also updated the Box to reflect this change.
+
+- Doubles Capture
+> Being able to capture a Pokemon in doubles.
 
 - Evolutions in Battle
 > Allows level-based or related evolutions to be done in battle.
