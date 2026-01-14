@@ -16,7 +16,7 @@ def pbHeadbuttEffect(event = nil)
 end
 
 #-----------------------------------------------------------------------------
-# Custom Headbutt behavior will always tries an encounter. 15% chance of using Headbutt for a rare encounter; otherwise uses the common Headbutt encounter type.
+# Custom Headbutt behavior will always try an encounter. 15% chance of using Headbutt for a rare encounter; otherwise uses the common Headbutt encounter type.
 #-----------------------------------------------------------------------------
 def pbHeadbuttEffectAlways
   enctype = (rand(100) < 15 ? :HeadbuttLow : :HeadbuttHigh)
