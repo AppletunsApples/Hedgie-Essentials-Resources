@@ -124,10 +124,10 @@ class Game_Variables
     storylevel_set_variable(variable_id, value)
     return unless variable_id == Settings::STORY_VARIABLE
     if old_value.to_i != value.to_i
-      new_story_level = Story_LevelStats.get_story_level
+      $game_variables[Settings::STORY_VARIABLE] = value.to_i
       Story_LevelStats.recalc_all_stats
-    else
-      puts "Story Level Variable #{variable_id} was set to the same value (#{value.inspect}); no recalculation."
+      new_story_level = Settings::STORY_LEVELS[$game_variables[Settings::STORY_VARIABLE]]
+      puts "Variable #{Settings::STORY_VARIABLE} was set to Level #{new_story_level}; Stats have been recalculated."
     end
   end
 end
