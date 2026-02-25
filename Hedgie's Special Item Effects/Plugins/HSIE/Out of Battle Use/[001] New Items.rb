@@ -35,7 +35,7 @@ ItemHandlers::UseOnPokemon.add(:HEALTHCHOCOLATE, proc { |item, qty, pkmn, scene|
   next pbUseIVRaisingItem(:HP, 1, qty, pkmn, "wing", scene)
 })
 
-ItemHandlers::UseOnPokemonMaximum.add(:ALLURINGCHOCOLATE, proc { |item, pkmn|
+ItemHandlers::UseOnPokemonMaximum.add(:STRONGCHOCOLATE, proc { |item, pkmn|
   next pbMaxUsesOfIVRaisingItem(:ATTACK, 1, pkmn)
 })
 
